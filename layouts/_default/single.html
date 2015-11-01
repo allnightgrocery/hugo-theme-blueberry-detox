@@ -11,7 +11,7 @@
 {{ partial "header.html" . }}
 <main class="content" role="main">
 	<div class="container">
-		{{ .Render "post" }}
+		{{ partial "post" . }}
 	</div>
 </main>
 {{ partial "footer.html" . }}
