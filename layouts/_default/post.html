@@ -11,9 +11,13 @@
 
     <footer class="post-footer">
         <section class="f-1">
-            {{ with .Site.Params.author }}
+            {{ if isset .Params "author" }}
             <section class="author">
-                <p>Words by {{ . }}</p>
+                <p>Words by {{ index .Params "author" }}</p>
+            </section>
+            {{ else if isset .Site.Params "author" }}
+            <section class="author">
+                <p>Words by {{ index .Site.Params "author" }}</p>
             </section>
             {{ end }}
             
@@ -38,7 +42,7 @@
                 </span>
             </section>
 
-            {{ with.Params.tags }}
+            {{ with .Params.tags }}
             	<span class="f-post-tags"><i class="fa fa-tag"></i>
             	{{ delimit  . ", " }}
             	</span>
