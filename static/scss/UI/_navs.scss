@@ -1,0 +1,33 @@
+// -------------------------------------------------------------------------
+// NAVS
+// -------------------------------------------------------------------------
+
+
+// Default .nav class
+// When used on an "ol" or "ul", this class throws the list into horizontal mode
+// e.g.:
+//   <ul class="nav">
+//       <li><a href=#>Home</a></li>
+//       <li><a href=#>About</a></li>
+//       <li><a href=#>Portfolio</a></li>
+//       <li><a href=#>Contact</a></li>
+//   </ul>
+
+
+.nav {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding-left: 0; // Override default ul/ol
+    @include clearfix();
+
+    > li {
+
+        &,
+        > a {
+            display: inline-block;
+           *display: inline;
+            zoom: 1;
+        }
+    }
+}

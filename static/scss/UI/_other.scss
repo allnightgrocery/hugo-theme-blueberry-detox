@@ -1,0 +1,58 @@
+// -------------------------------------------------------------------------
+// NOTES
+// -------------------------------------------------------------------------
+
+
+// This sheet has small, reusable misc styles that don't fit into other sheets.
+
+
+// -------------------------------------------------------------------------
+// HR
+// -------------------------------------------------------------------------
+
+
+// A better looking default horizontal rule
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 50px 0;
+    padding: 0;
+}
+
+
+// -------------------------------------------------------------------------
+// SELECTION
+// -------------------------------------------------------------------------
+
+
+// Remove text-shadow in selection highlight: h5bp.com/i
+// These selection rule sets have to be separate.
+// Color is set by default to your primary brand color.
+::-moz-selection {
+    background: $black-60;
+    color: white;
+    text-shadow: none;
+}
+
+
+::selection {
+    background: $black-60;
+    color: white;
+    text-shadow: none;
+}
+
+
+// -------------------------------------------------------------------------
+// MISC
+// -------------------------------------------------------------------------
+
+
+// For Browsehappy prompt
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: $color-text;
+    padding: 0.2em 0;
+}

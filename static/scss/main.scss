@@ -1,0 +1,44 @@
+// -------------------------------------------------------------------------
+// NOTES
+// -------------------------------------------------------------------------
+
+
+// This is where all the partial SCSS files are imported into one document. As a result you'll only need to compile this particular stylesheet when converting to standard CSS.
+
+
+// -------------------------------------------------------------------------
+// IMPORTING
+// -------------------------------------------------------------------------
+
+
+// Reset
+@import "normalize";
+@import "print";
+
+
+// Variables (Colors and Typography) & Mixins
+// These are in this order because of variable dependencies
+@import "colors";
+@import "typography";
+@import "mixins";
+
+
+// Base
+@import "base";
+
+
+// Grid
+@import "grid";
+
+
+// UI
+@import "UI/navs";
+@import "UI/media";
+@import "UI/buttons";
+@import "UI/forms";
+@import "UI/code";
+@import "UI/other";
+
+
+// Project–specific
+@import "layout";

@@ -1,0 +1,291 @@
+// -------------------------------------------------------------------------
+// NOTES
+// -------------------------------------------------------------------------
+
+
+// Pear uses REM's for font sizing, with pixel fallbacks for IE 6-8 as they do not understand REM units.
+// More about font sizing with REM's: http://css-tricks.com/font-sizing-with-rem/
+
+// Don't randomly pick font sizes; choose a type hierarchy in a meaningful way: 
+// http://alistapart.com/article/more-meaningful-typography
+// http://typecast.com/blog/contrast-through-scale
+// Here's an excellent calculator for doing this: http://modularscale.com/
+
+// The default scale is 18, 21, 24, 36, 48, 60
+
+
+// -------------------------------------------------------------------------
+// BASICS
+// -------------------------------------------------------------------------
+
+
+//   Using local fonts? Check out Font Squirrel's webfont generator: http://www.fontsquirrel.com/tools/webfont-generator
+
+//   Below is the proper syntax for an @font-face file. Just create a "fonts" folder at the root, copy your FontName into code below and remove comment brackets.
+
+//   @font-face {
+//       font-family: 'FontName';
+//       src: url('../fonts/FontName.eot');
+//       src: url('../fonts/FontName.eot?iefix') format('eot'),
+//            url('../fonts/FontName.woff') format('woff'),
+//            url('../fonts/FontName.ttf') format('truetype'),
+//            url('../fonts/FontName.svg#webfontZam02nTh') format('svg');
+//       font-weight: normal;
+//       font-style: normal; }
+
+
+// Font Families
+$font-family-sans-serif:        "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:             Georgia, Garamond, serif;
+$font-family-monospace:         Monaco, Menlo, Consolas, "Courier New", monospace;
+$font-family-base:              $font-family-sans-serif;
+
+
+// Base Font Sizes
+$font-size-base:                100% !default; // percentage value (16 * 112.5% = 18px)
+$font-size-large:               ($font-size-base * 1.25);
+$font-size-small:               ($font-size-base * 0.75);
+
+
+// Line Height
+$line-height-base:              1.65 !default;
+
+// Bottom margin for paragraphs
+$p-margin-bottom:               1.5em;
+
+
+// The default is hyphenation: see _base.scss
+// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+abbr, acronym, blockquote, code, dir, kbd, listing, plaintext, q, samp, tt, var, xmp {
+	-webkit-hyphens: none; // Safari 5.1 thru 6, iOS 4.2 thru 6
+	-moz-hyphens: none; // Firefox 16 thru 20
+	-ms-hyphens: none; // IE10
+	-o-hyphens: none;
+	hyphens: none;	 // W3C standard
+}
+
+
+// -------------------------------------------------------------------------
+// HEADINGS
+// -------------------------------------------------------------------------
+
+
+// Variables
+$headings-font-family:          'Montserrat';
+$headings-font-weight:          700;
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $headings-font-family;
+    font-weight: $headings-font-weight;
+    line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
+    margin-top: 0;
+	text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning | https://developer.mozilla.org/en-US/docs/CSS/text-rendering
+}
+
+
+h1  {
+    font-size: 60px;
+	font-size: 3.33333rem; // 60 / 18 = 3.3333
+	margin-bottom: 0.495em;
+    @media (max-width: 550px){
+        font-size: 50px;
+    }
+}
+
+
+h2  {
+    font-size: 48px;
+	font-size: 2.6667rem; // 48 / 18 = 2.6667
+	margin-bottom: 0.61875em;
+    @media (max-width: 550px){
+        font-size: 43px;
+    }
+}
+
+
+h3  {
+    font-size: 36px;
+	font-size: 2rem; // 36 / 18 = 2
+	margin-bottom: 0.825em;
+    @media (max-width: 550px){
+        font-size: 28px;
+    }
+}
+
+
+h4  {
+    font-size: 24px;
+	font-size: 1.3333333333333333rem; // 24 / 18 = 1.3333
+	margin-bottom: 1.2375em;
+    @media (max-width: 550px){
+        font-size: 22px;
+    }
+}
+
+
+h5  {
+    font-size: 21px;
+	font-size: 1.16667rem; // 21 / 18 = 1.1667
+	margin-bottom: 1.4142857142857141em; // measure( base font-size(18) * base line-height(1.65) ) / current font-size(21) = margin-bottom(1.4142857142857141)
+    @media (max-width: 550px){
+        font-size: 19px;
+    }
+}
+
+
+h6  {
+    font-size: 18px;
+	font-size: 1rem; /* 18 = 18 × 1 */
+	margin-bottom: 1.65em; // measure( base font-size(18) * base line-height(1.65) ) / current font-size(18) = margin-bottom(1.65)
+    @media (max-width: 550px){
+        font-size: 15px;
+    }
+}
+
+
+// Margin-bottom for headings explanation:
+// Makes sure that there's always one unit of measure's worth of space between stuff for headings. This is better than spacing using line-height because of the wrapping issue where we have wrapping onto 2 lines with a high line-height.
+
+
+// -------------------------------------------------------------------------
+// PARAGRAPHS
+// -------------------------------------------------------------------------
+
+
+// bottom margin for paragraphs
+p {
+	margin: auto auto $p-margin-bottom;
+}
+
+
+// -------------------------------------------------------------------------
+// LINKS
+// -------------------------------------------------------------------------
+
+
+a {
+    color: $color-link;
+    text-decoration: none;
+    line-height: inherit;
+    outline: 0;
+    
+    // Transitions
+    -webkit-transition: color .1s ease-out;
+    -webkit-transition-property: color;
+    -webkit-transition-duration: .1s;
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-delay: initial;
+    -moz-transition: color .1s ease-out;
+    -o-transition: color .1s ease-out;
+    -ms-transition: color .1s ease-out;
+    transition: color .1s ease-out;
+    transition-property: color;
+    transition-duration: .1s;
+    transition-timing-function: ease-out;
+    transition-delay: initial;
+}
+
+
+a:hover {
+    color: $black-30;
+}
+
+
+p a, p a:visited { 
+    line-height: inherit; 
+}
+
+
+// -------------------------------------------------------------------------
+// LISTS
+// -------------------------------------------------------------------------
+
+
+// Unordered and Ordered lists
+// Take off bottom margin from nested lists
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: $p-margin-bottom;
+    list-style-type: none;
+    text-align: center;
+    padding-left: 0;
+    padding-top: 2em;
+    ul,
+    ol {
+        margin-bottom: 0;
+    }
+}
+
+
+dt {
+    font-weight: bold;
+}
+
+
+dd {
+    margin-left: 0; // Undo browser default
+}
+
+
+// -------------------------------------------------------------------------
+// MISC
+// -------------------------------------------------------------------------
+
+
+em,
+i {
+    font-style: italic;
+    line-height: inherit; 
+}
+
+
+strong,
+b {
+    line-height: inherit; 
+}
+
+
+small, .small {
+    font-size: $font-size-small;
+    font-weight: normal;
+    line-height: 1;
+}
+
+
+// Remove underlines from potentially troublesome elements.
+u, ins {
+    text-decoration: none;
+}
+
+
+// Quotes
+blockquote:before, blockquote:after, q:before, q:after {
+    content: "";
+    content: none;
+}
+
+
+blockquote {
+    max-width: 100%; // Prevents it from breaking out of container
+    border-left: 5px solid $black-10;
+    margin: 1.5em 0;
+}
+
+
+blockquote, q {
+	quotes: none;
+    font-size: ($font-size-base * 1.25);
+}
+
+
+blockquote > p {
+	padding: 15px;
+}
+
+
+// Undo browser default styling
+cite { 
+    font-style: normal; 
+}

@@ -1,0 +1,161 @@
+// -------------------------------------------------------------------------
+// NORMALIZATION AND GOOD PRACTICES
+// -------------------------------------------------------------------------
+
+
+// Normalize non-control form elements:
+
+select, input, textarea {
+    color: $color-text;
+}
+
+
+// Remove default fieldset styles.
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+
+legend {
+    display: block;
+    width: 100%;
+    font-size: ($font-size-base * 1.5);
+    line-height: inherit;
+    white-space: normal;
+}
+
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+// Reset height for textareas
+// Allow only vertical resizing of textareas.
+textarea {
+    height: auto;
+    resize: vertical;
+}
+
+
+// Normalize form controls:
+
+// Position radios and checkboxes better
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 4px 0 0;
+    margin-top: 1px; // IE8-9
+}
+
+
+// Set the height of select and file controls to match text inputs
+// Normalize file input width
+input[type="file"] {
+    display: block;
+    width: 100%;
+}
+
+
+// Make multiple select elements height not fixed
+select[multiple],
+select[size] {
+    height: auto;
+}
+
+
+// Fix optgroup Firefox bug per https://github.com/twbs/bootstrap/issues/7611
+select optgroup {
+    font-size: inherit;
+    font-style: inherit;
+    font-family: inherit;
+}
+
+
+// Fix for Chrome number input
+// Setting certain font-sizes causes the `I` bar to appear on hover of the bottom increment button.
+// See https://github.com/twbs/bootstrap/issues/8350 for more.
+input[type="number"] {
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        height: auto;
+    }
+}
+
+
+// Adjust output element
+output {
+    display: block;
+    vertical-align: middle;
+}
+
+
+input,
+button, 
+select,
+label, {
+    vertical-align: middle;
+}
+
+
+// Reset fonts for relevant elements
+input,
+button,
+select,
+textarea {
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+}
+
+
+input:focus, textarea:focus {
+    outline: 0;
+}
+
+
+// -------------------------------------------------------------------------
+// SOME DEFAULT STYLING
+// -------------------------------------------------------------------------
+
+
+input, textarea {
+    display: block;
+    width: 100%;
+    max-width: 100%; // Prevents them from breaking out of container
+    border: 1px solid $black-30;
+    border-radius: 5px;
+    padding: 10px 0px;
+    font-size: inherit;
+    font-family: inherit;
+    text-indent: 15px;
+    vertical-align: middle;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    // Border color transition
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -webkit-transition-property: border-color, box-shadow;
+    -webkit-transition-duration: 0.15s, 0.15s;
+    -webkit-transition-timing-function: ease-in-out, ease-in-out;
+    -webkit-transition-delay: initial, initial;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition-property: border-color, box-shadow;
+    transition-duration: 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: initial, initial;
+    
+    // Reset height for `textarea`s
+    textarea {
+        height: auto;
+    }
+}
+
+
+input:focus, textarea:focus {
+    border-color: $color-primary;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6);
+}
