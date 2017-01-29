@@ -1,8 +1,20 @@
     <footer id="site-footer">
         <div class="container">
-            <a href="{{ .Site.BaseURL }}index.xml" title="Get the RSS feed"><span class="tooltip"><i class="fa fa-rss"></i></span></a>
-            <section>&copy; <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author }}</a> 2017 | All rights reserved</section>
-            <section>Theme by <a href="http://www.jrdnbwmn.com">Jordan Bowman</a>. Generated with <a href="http://gohugo.io/">Hugo</a>.</section>
+          {{ with .Site.Params.instagram }}
+            <a href="https://www.instagram.com/{{ . }}/" title="Instagram" target="_blank"><span class="tooltip"><i class="fa fa-instagram"></i></span></a>
+          {{ end }}
+          {{ with .Site.Params.twitter_name }}
+            <a href="https://www.twitter.com/{{ . }}" title="Twitter" target="_blank"><span class="tooltip"><i class="fa fa-twitter"></i></span></a>
+          {{ end }}
+          {{ with .Site.Params.facebook }}
+            <a href="https://www.facebook.com/{{ . }}" title="Facebook" target="_blank"><span class="tooltip"><i class="fa fa-facebook"></i></span></a>
+          {{ end }}
+          {{ with .Site.Params.github }}
+            <a href="https://www.github.com/{{ . }}" title="GitHub" target="_blank"><span class="tooltip"><i class="fa fa-github"></i></span></a>
+          {{ end }}
+          <a href="{{ .Site.BaseURL }}index.xml" title="Get the RSS feed"><span class="tooltip"><i class="fa fa-rss"></i></span></a>
+          <section>&copy; <a href="{{ .Site.BaseURL }}">{{ .Site.Params.author }}</a> 2017 | All rights reserved</section>
+          <section>Theme by <a href="http://www.jrdnbwmn.com">Jordan Bowman</a>. Generated with <a href="http://gohugo.io/">Hugo</a>.</section>
         </div>
     </footer>
 
