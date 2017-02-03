@@ -1,0 +1,207 @@
+// -------------------------------------------------------------------------
+// NOTES
+// -------------------------------------------------------------------------
+
+
+// This is where your main styling goes, including whatever isn't covered by the modular stylesheets. It's usually divided up by sections of the website (header, body, footer, etc) in order to remain organized.
+
+
+// -------------------------------------------------------------------------
+// HEADER
+// -------------------------------------------------------------------------
+
+
+#site-header {
+    text-align: center;
+    min-height: 15em;
+    padding-top: 7em;
+    margin-bottom: 9em;
+    @media (max-width: 800px) {
+        padding-top: 4em !important;
+        margin-bottom: 4em !important;
+    }
+}
+
+
+.blog-title {
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-size: 75px;
+}
+
+
+.blog-description {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: $black-30;
+    font-size: 80%;
+}
+
+
+#blog-logo {
+    img {
+        margin: 0 auto 3em auto;
+    }
+}
+
+
+// -------------------------------------------------------------------------
+// INDEX
+// -------------------------------------------------------------------------
+
+
+.post {
+    margin-bottom: 9em;
+    @media (max-width: 800px) {
+        margin-bottom: 7em !important;
+    }
+}
+
+
+.post-header {
+    text-align: center;
+}
+
+
+.post-title {
+    margin-bottom: 30px;
+}
+
+
+.post-time {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+    font-size: 80%;
+}
+
+
+.post-footer {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 80%;
+    margin-top: 30px;
+}
+
+
+.pagination {
+    text-align: center;
+    margin: 4em 0 9em 0;
+    color: $black-30;
+    @media (max-width: 800px) {
+        margin: 4em 0 6em 0 !important;
+    }
+}
+
+
+// -------------------------------------------------------------------------
+// POSTS
+// -------------------------------------------------------------------------
+
+
+.post-content, #site-footer {
+    
+    a {
+        color: $color-link;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    a:hover {
+        color: $black-10;
+        border-bottom: 1px solid;
+    }
+}
+
+
+.m-logo {
+    @include hidden();
+}
+
+
+.p-post-title {
+    margin-bottom: 50px;
+}
+
+
+.f-1 {
+    @include clearfix();
+}
+
+
+.author {
+    float: left;
+    
+    @media (max-width: 550px) {
+        float: none !important;
+    }
+}
+
+
+@media (max-width: 550px) {
+        .author {
+            float: none !important;
+        }
+    
+        .f-post-time {
+            float: inherit !important;
+    }
+    }
+
+
+.f-post-time {
+    float: right;
+    
+    @media (max-width: 550px) {
+        float: none !important;
+    }
+}
+
+
+.f-2 {
+    @include clearfix();
+}
+
+
+.f-post-tags {
+    float: right;
+    
+    @media (max-width: 550px) {
+        float: none !important;
+    }
+}
+
+
+.share {
+    float: left;
+    
+    @media (max-width: 550px) {
+        float: none !important;
+        margin-bottom: 1.5em;
+    }
+}
+
+
+#comments {
+    margin-top: 30px;
+    @media (max-width: 550px) {
+        margin-top: 1em;
+    }
+}
+
+
+.m-page a {
+    color: $color-text !important;
+}
+
+
+// -------------------------------------------------------------------------
+// FOOTER
+// -------------------------------------------------------------------------
+
+
+#site-footer {
+    text-align: center;
+    height: 10em;
+}

@@ -1,0 +1,53 @@
+code,
+kbd,
+pre,
+samp {
+    font-family: $font-family-monospace;
+}
+
+
+// Inline code
+code {
+    padding: 2px 4px;
+    max-width: 100%;
+    font-size: 90%;
+    color: inherit;
+    background-color: transparent;
+    white-space: nowrap;
+    border-radius: 5px;
+}
+
+
+// Blocks of code
+pre {
+    display: block;
+    padding: 10px;
+    margin: 2.5em 0;
+    max-width: 100%;
+    font-size: ($font-size-base * .75);
+    line-height: $line-height-base;
+    word-break: break-all;
+    word-wrap: break-word;
+    color: $color-text;
+    background-color: $black-10;
+    border: 1px solid $black-30;
+    border-radius: 5px;
+    // Account for some code outputs that place code tags in pre tags
+    code {
+        padding: 0;
+        font-size: inherit;
+        color: inherit;
+        word-wrap: normal;
+        white-space: -moz-pre-wrap;
+        white-space: pre-wrap; // http://css-tricks.com/almanac/properties/w/whitespace
+        background-color: transparent;
+        border-radius: 0;
+    }
+}
+
+
+// For scrollable blocks of code use this class
+.pre-scrollable {
+    max-height: 350px;
+    overflow-y: scroll;
+}

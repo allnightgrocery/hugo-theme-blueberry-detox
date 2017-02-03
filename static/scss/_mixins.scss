@@ -1,0 +1,35 @@
+// -------------------------------------------------------------------------
+// NOTES
+// -------------------------------------------------------------------------
+
+
+// Set all your mixins here (except for the ones used in the grid sheet). This is important because order matters in Sass.
+
+
+// -------------------------------------------------------------------------
+// MIXINS
+// -------------------------------------------------------------------------
+
+
+// Clearfix
+@mixin clearfix() {
+	*zoom:1;
+
+	&:before,
+	&:after {
+	    content:"";
+	    display:table;
+	}
+
+	&:after {
+	    clear:both;
+	}
+}
+
+
+// Use this to hide from both screenreaders and browsers: h5bp.com/u
+// Mostly used to eliminate elements when scaling down in media queries
+@mixin hidden() {
+    display: none !important;
+    visibility: hidden;
+}

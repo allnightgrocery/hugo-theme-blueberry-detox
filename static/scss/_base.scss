@@ -1,0 +1,48 @@
+// Some good practices for base styles
+
+
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+
+html {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family-base;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    font-weight: normal;
+    overflow-y: scroll;
+    min-height: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    @media (max-width: 550px){
+        font-size: 15px;
+    }
+}
+
+
+body {
+    // For now, this is !important because the ::selection (below) affects the background color in IE
+    background-color: #fff !important;
+    padding: 0;
+    color: $color-text;
+    min-height: 100%;
+    width: 100%;
+    @include clearfix();
+    -webkit-font-smoothing: antialiased; // Fix for webkit rendering
+    // Ala Trent Walton (http://trentwalton.com/2011/09/07/css-hyphenation):
+    -webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+    word-wrap: break-word;
+    @media (max-width: 550px){
+        font-size: 15px;
+    }
+}

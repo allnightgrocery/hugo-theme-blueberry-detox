@@ -1,0 +1,104 @@
+// -------------------------------------------------------------------------
+// NOTES
+// -------------------------------------------------------------------------
+
+
+// Use the .btn class and then .btn type classes for further options, e.g.:
+//    <a href="#" class="btn btn-primary">Get Started</a>
+//    <a href="#" class="btn btn-secondary">More Info</a>
+
+// Be careful with drop shadows – if not done correctly they can cause blurriness on retina displays.
+
+
+// -------------------------------------------------------------------------
+// BASE STYLING
+// -------------------------------------------------------------------------
+
+
+.btn,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    // Basics and normalize
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    white-space: nowrap;
+    margin: 0;
+    background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    // Text
+    font-family: inherit;
+    line-height: $line-height-base;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    // Border
+    border: 1px solid transparent;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    // Size
+    padding: 15px 20px;
+}
+
+
+.btn:hover, .btn:focus,
+button:hover, button:focus,
+input[type="submit"]:hover, input[type="submit"]:focus,
+input[type="reset"]:hover, input[type="reset"]:focus,
+input[type="button"]:hover, input[type="button"]:focus {
+    background-color: darken($color-primary, 10%);
+    border: 1px solid transparent; // Override inherited 'a' tag hover bottom border (_typography.scss)
+    color: #fff;
+    text-decoration: none;
+    border-bottom: none;
+}
+
+
+.btn:active,
+button:active,
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active {
+    outline: none;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.15);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.15);
+}
+
+
+// Fix for odd Mozilla border & padding issues
+.btn::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+
+// -------------------------------------------------------------------------
+// TYPES OF BUTTONS
+// -------------------------------------------------------------------------
+
+
+.btn-primary {
+    background-color: $color-primary;
+    border-bottom: darken($color-primary, 10%); // Override inherited 'a' tag hover bottom border (_typography.scss)
+}
+
+
+.btn-secondary {
+    border: solid 1px $black-30;
+    color: $color-text;
+}
+
+
+.btn-secondary:hover, .btn-secondary:focus {
+    background-color: $black-10;
+    color: $color-text;
+    border: solid 1px $black-30; // Override inherited 'a' tag hover bottom border (_typography.scss)
+}

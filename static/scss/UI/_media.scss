@@ -1,0 +1,44 @@
+// -------------------------------------------------------------------------
+// MEDIA (IMAGES, VIDEO, AUDIO, ETC)
+// -------------------------------------------------------------------------
+
+
+// Fluid images
+img, embed, object, video {
+    display: block;
+    max-width: 100%; // Part 1: Set a maximum relative to the parent
+    height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
+
+// http://css-tricks.com/ie-fix-bicubic-scaling-for-images/
+img {
+    -ms-interpolation-mode: bicubic;
+    vertical-align: middle;
+    font-style: italic; // So that "alt" text is visually offset if images don’t load.
+    a & {
+        border: 0; // Remove blue border on IE
+    }
+}
+
+
+// Images will not be fluid if you specify width and/or height, so:
+img[width],
+img[height] {
+    max-width: none;
+}
+
+
+// Images in "figure" elements
+figure > img {
+    display: block;
+}
+
+
+// Remove the gap between images, videos, audio and canvas and the bottom of their containers: h5bp.com/i/440
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
